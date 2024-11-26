@@ -2,19 +2,19 @@
 //#include "stm32f407xx.h"
 
 #define _HC_SR04_EXTI_PIN_IRQn(PIN) \
-(PIN == 0)? EXTI0_IRQn \
-(PIN == 1)? EXTI1_IRQn \
-(PIN == 2)? EXTI2_IRQn \
-(PIN == 3)? EXTI3_IRQn \
-(PIN == 4)? EXTI4_IRQn \
+(PIN == 0)? EXTI0_IRQn : \
+(PIN == 1)? EXTI1_IRQn : \
+(PIN == 2)? EXTI2_IRQn : \
+(PIN == 3)? EXTI3_IRQn : \
+(PIN == 4)? EXTI4_IRQn : \
 (PIN <= 9)? EXTI9_5_IRQn : EXTI15_10_IRQn
 
 #define _HC_SR04_PIN_TO_HANDLER(PIN) \
-(PIN == 0)? EXTI0_IRQHandler \
-(PIN == 1)? EXTI1_IRQHandler \
-(PIN == 2)? EXTI2_IRQHandler \
-(PIN == 3)? EXTI3_IRQHandler \
-(PIN == 4)? EXTI4_IRQHandler \
+(PIN == 0)? EXTI0_IRQHandler : \
+(PIN == 1)? EXTI1_IRQHandler : \
+(PIN == 2)? EXTI2_IRQHandler : \
+(PIN == 3)? EXTI3_IRQHandler : \
+(PIN == 4)? EXTI4_IRQHandler : \
 (PIN <= 9)? EXTI9_5_IRQHandler : EXTI15_10_IRQHandler
 
 
